@@ -14,9 +14,12 @@ struct OnBoardingView: View {
     // MARK: - BODY
     var body: some View {
         TabView{
-            ForEach(fruits[0...5]){ item in
-                FruitCardView(fruit: item)
-            } //: LOOP
+            ForEach(fruits[0...5], content: {
+                fruit in FruitCardView(fruit: fruit)
+            })
+//            ForEach(fruits[0...5]){ item in
+//                FruitCardView(fruit: item)
+//            } //: LOOP
         } //: TAB
         .tabViewStyle(PageTabViewStyle())
         .padding(.vertical, 20)
